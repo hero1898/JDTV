@@ -20,7 +20,7 @@ def is_url_valid(url):
 
 # 主函数
 def main():
-    source_url = "https://raw.bgithub.xyz/kimwang1978/collect-tv-txt/main/merged_output.txt"
+    source_url = "https://raw.githubusercontent.com/kimwang1978/collect-tv-txt/main/merged_output.txt"
     
     # 获取文件内容
     content = fetch_tv_streams(source_url)
