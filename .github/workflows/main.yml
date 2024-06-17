@@ -43,15 +43,15 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git commit -am "${{ steps.date.outputs.date }}"
-          if [[ -f "iptv.txt" ]]; then
-            git add iptv.txt
+          if [ -n "$(git status --porcelain)" ]; then
+          git add *.txt
+          git commit -m "Automatic update"
+          git push
+          else
+            echo "No changes detected, skipping commit."
           fi
           if [[ -f "EPG.xml" ]]; then
             git add EPG.xml
-          fi
-          if ! git diff --staged --quiet; then
-            git commit -m "Auto-update iptv.txt"
-            git push
           fi
           git add README.md
         
