@@ -332,7 +332,7 @@ results.sort(key=lambda x: (x[0], -float(x[2].split()[0])))
 results.sort(key=lambda x: channel_key(x[0]))
 result_counter = 10  # 每个频道需要的个数
 
-with open("iptv_list.txt", 'w', encoding='utf-8') as file:
+with open("iptv.txt", 'w', encoding='utf-8') as file:
     channel_counters = {}
     file.write('央视频道,#genre#\n')
     for result in results:
@@ -367,7 +367,22 @@ with open("iptv_list.txt", 'w', encoding='utf-8') as file:
     file.write('湖南频道,#genre#\n')
     for result in results:
         channel_name, channel_url, speed = result
-        if '湖南' in channel_name or '长沙' in channel_name or '金鹰' in channel_name or '先锋乒羽' in channel_name or '快乐垂钓' in channel_name:
+        if '湖南' in channel_name or '长沙' in channel_name or '湘潭' in channel_name or '金鹰' in channel_name or '先锋乒羽' in channel_name or '快乐垂钓' in channel_name:
+            if channel_name in channel_counters:
+                if channel_counters[channel_name] >= result_counter:
+                    continue
+                else:
+                    file.write(f"{channel_name},{channel_url}\n")
+                    channel_counters[channel_name] += 1
+            else:
+                file.write(f"{channel_name},{channel_url}\n")
+                channel_counters[channel_name] = 1
+
+    channel_counters = {}
+    file.write('深圳频道,#genre#\n')
+    for result in results:
+        channel_name, channel_url, speed = result
+        if '深圳' in channel_name:
             if channel_name in channel_counters:
                 if channel_counters[channel_name] >= result_counter:
                     continue
