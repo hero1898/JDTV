@@ -4,7 +4,7 @@ on:
   schedule:
     - cron: '0 22 1 * *'
   workflow_dispatch:
-    分支:
+    branches:
       - main
 
 permissions:
@@ -42,24 +42,32 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git commit -am "${{ steps.date.outputs.date }}"
-          if [ -n "$(git status --porcelain)" ]; then
-          git add *.txt
-          git commit -m "Automatic update"
-          git push
+          
+          if [[ -f "iptv.txt" ]]; then
+            git add iptv.txt
+            git commit -m "Automatic update"
+            git push
           else
-            echo "No changes detected, skipping commit."
+            echo "iptv.txt does not exist, skipping commit."
           fi
+
           if [[ -f "EPG.xml" ]]; then
             git add EPG.xml
           fi
           git add README.md
-        
-          current_datetime=$(date +"%Y%m%d_%H%M%S")
-          cp iptv.txt history/"${current_datetime}_iptv.txt"
-          git add history/"${current_datetime}_iptv.txt"
-          git commit -m "Archive file with timestamp"
+          git commit -m "${{ steps.date.outputs.date }}"
           git push
+
+          if [[ -f "iptv.txt" ]]; then
+            current_datetime=$(date +"%Y%m%d_%H%M%S")
+            mkdir -p history
+            cp iptv.txt history/"${current_datetime}_iptv.txt"
+            git add history/"${current_datetime}_iptv.txt"
+            git commit -m "Archive file with timestamp"
+            git push
+          else
+            echo "iptv.txt does not exist, skipping archive."
+          fi
 
 env:
   TZ: Asia/Shanghai
