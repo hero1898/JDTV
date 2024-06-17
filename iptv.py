@@ -362,6 +362,21 @@ with open("iptv.txt", 'w', encoding='utf-8') as file:
             else:
                 file.write(f"{channel_name},{channel_url}\n")
                 channel_counters[channel_name] = 1
+
+    channel_counters = {}
+    file.write('港澳台,#genre#\n')
+    for result in results:
+        channel_name, channel_url, speed = result
+        if '凤凰' in channel_name or '香港' in channel_name or 'HOY' in channel_name or '无线' in channel_name or '中天' in channel_name or '中视' in channel_name:
+            if channel_name in channel_counters:
+                if channel_counters[channel_name] >= result_counter:
+                    continue
+                else:
+                    file.write(f"{channel_name},{channel_url}\n")
+                    channel_counters[channel_name] += 1
+            else:
+                file.write(f"{channel_name},{channel_url}\n")
+                channel_counters[channel_name] = 1
                         
     channel_counters = {}
     file.write('湖南频道,#genre#\n')
