@@ -33,7 +33,7 @@ jobs:
       - name: Run iptv
         run: python ${{ github.workspace }}/iptv.py
 
-      - name: Run iptv
+      - name: 更新 EPG.xml 和 README.md
         run:  |      
           rm -f EPG.xml && wget https://epg.112114.xyz/pp.xml -O EPG.xml
           echo "IPTV.txt 的网址 已于 ${{ steps.date.outputs.date }} 更新，本仓库访客数：![Visitor's Count](https://profile-counter.glitch.me/pxiptv_TV/count.svg)" > README.md
