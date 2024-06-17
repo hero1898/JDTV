@@ -3,8 +3,8 @@ name: 酒店电视直播源更新
 on:
   schedule:
     - cron: '0 22 1 * *'
-  push:
-    branches:
+  workflow_dispatch:
+    分支:
       - main
 
 permissions:
