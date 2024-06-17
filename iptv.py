@@ -415,5 +415,5 @@ with open("iptv.txt", 'w', encoding='utf-8') as file:
     file.write(f"{now.strftime("%Y-%m-%d")},url\n")
     file.write(f"{now.strftime("%H:%M:%S")},url\n")
 
-os.remove("iptv.txt")
+# os.remove("iptv.txt")
 
