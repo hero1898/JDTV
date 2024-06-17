@@ -1,1 +1,1 @@
-iptv.txt 的网址 已于 2024-06-17 15:51:12 更新，本仓库访客数：![Visitor's Count](https://profile-counter.glitch.me/pxiptv_TV/count.svg)
+good_channels.m3u 的网址 已于 2024-06-17 16:40:09 更新，本仓库访客数：![Visitor's Count](https://profile-counter.glitch.me/pxiptv_TV/count.svg)
