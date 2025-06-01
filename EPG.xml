@@ -45201,6 +45201,9 @@
 	<programme channel="newtv军旅剧场" start="20250602050300 +0800" stop="20250602054900 +0800">
 		<title lang="zh">16_黄河在咆哮</title>
 	</programme>
+	<programme channel="newtv军旅剧场" start="20250602054900 +0800" stop="20250602063700 +0800">
+		<title lang="zh">贝卡罗莱L-a-甘磷酸胆碱复合粉-渠道（右）</title>
+	</programme>
 	<channel id="newtv家庭剧场">
 		<display-name lang="zh">NEWTV家庭剧场</display-name>
 	</channel>
@@ -45300,6 +45303,9 @@
 	<programme channel="newtv怡伴健康" start="20250602050600 +0800" stop="20250602055200 +0800">
 		<title lang="zh">10_加油！妈妈</title>
 	</programme>
+	<programme channel="newtv怡伴健康" start="20250602055200 +0800" stop="20250602062900 +0800">
+		<title lang="zh">侧柏叶墨旱莲何首乌精油皂-渠道（右）</title>
+	</programme>
 	<channel id="newtv潮妈辣婆">
 		<display-name lang="zh">NEWTV潮妈辣婆</display-name>
 	</channel>
@@ -45329,6 +45335,9 @@
 	</programme>
 	<programme channel="newtv潮妈辣婆" start="20250602054100 +0800" stop="20250602060100 +0800">
 		<title lang="zh">羊奶粉推广片-渠道-4001087099</title>
+	</programme>
+	<programme channel="newtv潮妈辣婆" start="20250602060100 +0800" stop="20250602064800 +0800">
+		<title lang="zh">39_你比星光美丽</title>
 	</programme>
 	<channel id="newtv军事评论">
 		<display-name lang="zh">NEWTV军事评论</display-name>
@@ -45362,6 +45371,9 @@
 	</programme>
 	<programme channel="newtv军事评论" start="20250602053000 +0800" stop="20250602055200 +0800">
 		<title lang="zh">一战沙场b7凡尔登（下）</title>
+	</programme>
+	<programme channel="newtv军事评论" start="20250602055200 +0800" stop="20250602061400 +0800">
+		<title lang="zh">一战沙场b7贝洛森林（上）</title>
 	</programme>
 	<channel id="newtv炫舞未来">
 		<display-name lang="zh">NEWTV炫舞未来</display-name>
